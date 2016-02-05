@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.require_paths    = ["lib"]
   s.extra_rdoc_files = ["LICENSE", "README.md"]
 
-  s.required_ruby_version = ">= 2.0.0"
+
 end
