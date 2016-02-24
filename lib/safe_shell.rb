@@ -10,7 +10,10 @@ module SafeShell
     pid = spawn(command, *(args.map { |a| a.to_s }), opts)
     write_end.close
     output = read_end.read
-    Process.waitpid(pid)
+    begin
+      Process.waitpid(pid)
+    rescue Errno::ECHILD
+    end
     read_end.close
     output
   end
